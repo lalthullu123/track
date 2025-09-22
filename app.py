@@ -10,7 +10,7 @@ logging.basicConfig(filename='visitor_logs.txt', level=logging.INFO, format='%(a
 @app.route('/')
 def index():
     # Get the visitor's IP address and User-Agent
-    ip_address = request.remote_addr
+    ip_address = request.headers.get('X-Forwarded-For', request.remote_addr).split(',')[0]
     user_agent = request.user_agent.string
     
     # Log the IP address and User-Agent to the log file
