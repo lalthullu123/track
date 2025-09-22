@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="See if apps automatically load the website">
+    <meta property="og:description" content="My app checks if people can load the website in an app">
+    <meta property="og:image" content="{{ url_for('static', filename='image.jpg', _external=True) }}" />
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:type" content="website">
     <title>Index Page</title>
 </head>
 <body>
